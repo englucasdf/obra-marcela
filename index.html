@@ -58,26 +58,38 @@ tfoot td{padding:8px 12px;font-weight:700;background:var(--cinza-esc);color:var(
 .prog-bar{height:7px;border-radius:4px;transition:width 0.3s;}
 .btn-del{background:none;border:none;color:#ccc;cursor:pointer;font-size:1rem;padding:0 4px;}
 .btn-del:hover{color:var(--verm);}
-.etapa-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--borda);}
-.etapa-item:last-child{border-bottom:none;}
-.etapa-info{flex:1;min-width:0;}
-.etapa-nome{font-size:0.84rem;font-weight:500;margin-bottom:4px;}
-.etapa-subs{display:flex;flex-wrap:wrap;gap:4px;}
-.sub-tag{font-size:0.68rem;background:var(--cinza-cla);border:1px solid var(--borda);border-radius:12px;padding:2px 8px;color:var(--cinza-med);}
-.etapa-pct{font-size:0.82rem;font-weight:700;min-width:36px;text-align:right;}
-.etapa-slider{flex:2;min-width:80px;}
-input[type=range]{-webkit-appearance:none;width:100%;height:5px;border-radius:3px;background:#e0e0e0;outline:none;}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--verm);cursor:pointer;}
+.etapa-header{display:flex;align-items:center;gap:10px;padding:12px 0;cursor:pointer;border-bottom:1px solid var(--borda);user-select:none;}
+.etapa-header:last-of-type{border-bottom:none;}
+.etapa-toggle{font-size:0.72rem;color:var(--azul);min-width:14px;}
+.etapa-nome-txt{font-size:0.86rem;font-weight:500;flex:1;}
+.etapa-exec-pct{font-size:0.82rem;font-weight:700;min-width:42px;text-align:right;}
+.etapa-exec-bar{flex:2;min-width:80px;}
+.etapa-exec-bar-wrap{background:#e0e0e0;border-radius:3px;height:6px;}
+.etapa-exec-bar-fill{height:6px;border-radius:3px;transition:width 0.3s;}
+.subs-container{padding:6px 0 6px 24px;display:none;}
+.subs-container.aberto{display:block;}
+.sub-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid #f5f5f5;}
+.sub-row:last-child{border-bottom:none;}
+.sub-nome{font-size:0.78rem;color:var(--cinza-med);flex:1;}
+.sub-peso{font-size:0.70rem;color:#EF9F27;font-weight:600;min-width:28px;}
+.sub-slider{flex:2;min-width:60px;}
+.sub-pct{font-size:0.76rem;font-weight:700;min-width:32px;text-align:right;color:var(--cinza-esc);}
+input[type=range]{-webkit-appearance:none;width:100%;height:4px;border-radius:3px;background:#e0e0e0;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--verm);cursor:pointer;}
 .gantt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
 .gantt-table{border-collapse:collapse;white-space:nowrap;width:100%;}
-.gantt-table th{background:var(--cinza-esc);color:var(--branco);padding:5px 3px;text-align:center;font-size:0.65rem;font-weight:600;border:1px solid rgba(255,255,255,0.1);}
-.gantt-table th.nome-col{text-align:left;min-width:200px;padding-left:8px;position:sticky;left:0;z-index:2;}
-.gantt-table td{padding:1px;border-bottom:1px solid var(--borda);border-right:1px solid #f0f0f0;height:24px;}
-.gantt-table td.nome-cell{padding-left:8px;font-size:0.76rem;font-weight:500;position:sticky;left:0;background:var(--branco);z-index:1;min-width:200px;}
-.gantt-table tr:nth-child(even) td.nome-cell{background:var(--cinza-cla);}
-.gantt-table tr:nth-child(even){background:var(--cinza-cla);}
-.gc-prev{background:rgba(41,128,185,0.20);border-top:2px solid rgba(41,128,185,0.45);border-bottom:2px solid rgba(41,128,185,0.45);}
+.gantt-th-nome{background:var(--cinza-esc);color:var(--branco);padding:5px 8px;text-align:left;font-size:0.68rem;font-weight:600;position:sticky;left:0;z-index:3;min-width:200px;}
+.gantt-th-mes{background:var(--cinza-esc);color:var(--branco);padding:5px 3px;text-align:center;font-size:0.68rem;font-weight:600;border-left:1px solid rgba(255,255,255,0.15);}
+.gantt-td-nome{padding:3px 8px;font-size:0.76rem;font-weight:500;position:sticky;left:0;z-index:1;min-width:200px;cursor:pointer;border-bottom:1px solid var(--borda);}
+.gantt-td-nome-main{background:var(--branco);}
+.gantt-td-nome-sub{background:#f8f9ff;font-size:0.70rem;color:var(--cinza-med);padding-left:20px;font-weight:400;}
+.gantt-tr-even .gantt-td-nome-main{background:var(--cinza-cla);}
+.gantt-td{height:22px;padding:0;border-bottom:1px solid #f5f5f5;border-right:1px solid #f5f5f5;}
+.gantt-td-sub{height:18px;padding:0;border-bottom:1px solid #eeeeee;border-right:1px solid #f5f5f5;}
+.gc-prev{background:rgba(41,128,185,0.22);border-top:2px solid rgba(41,128,185,0.5);border-bottom:2px solid rgba(41,128,185,0.5);}
 .gc-exec{background:rgba(39,174,96,0.65);}
+.gc-sub-prev{background:rgba(239,159,39,0.20);border-top:1px solid rgba(239,159,39,0.55);border-bottom:1px solid rgba(239,159,39,0.55);}
+.gc-sub-exec{background:rgba(39,174,96,0.45);}
 .gc-hoje{border-left:2px solid var(--verm)!important;}
 .legenda{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;}
 .legenda-item{display:flex;align-items:center;gap:5px;font-size:0.74rem;color:var(--cinza-med);}
@@ -107,6 +119,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <div><h1>Obra Marcela — Vicente Pires | 358,35 m²</h1><p id="data-atualizacao">Carregando...</p></div>
     <div class="tag-status">Em Andamento</div>
   </div>
+
+  <!-- PAGAMENTOS -->
   <div id="pag-pagamentos" class="pagina ativa">
     <div class="grid-cards">
       <div class="card verde"><label>Engenheiro — Pago</label><div class="valor" id="c-eng-pago">—</div><div class="sub" id="c-eng-sub">—</div></div>
@@ -155,11 +169,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
       </table>
     </div>
   </div>
+
+  <!-- CRONOGRAMA -->
   <div id="pag-cronograma" class="pagina">
     <div class="grid-cards">
       <div class="card azul"><label>Início</label><div class="valor" style="font-size:1rem">16/06/2026</div><div class="sub">Data de início</div></div>
       <div class="card azul"><label>Término Previsto</label><div class="valor" style="font-size:1rem">Fev/2027</div><div class="sub">8 meses</div></div>
-      <div class="card verde"><label>Avanço Físico</label><div class="valor" id="c-avanco">—</div><div class="sub">Média das etapas</div></div>
+      <div class="card verde"><label>Avanço Físico</label><div class="valor" id="c-avanco">—</div><div class="sub">Média ponderada</div></div>
       <div class="card verm"><label>Etapa Atual</label><div class="valor" style="font-size:0.85rem;line-height:1.3" id="c-etapa-atual">—</div><div class="sub" id="c-etapa-sub">—</div></div>
     </div>
     <div class="grid-graficos-3">
@@ -185,27 +201,35 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
         <div class="cards-fase" id="cards-fase"></div>
       </div>
     </div>
+
+    <!-- ACORDEÃO SLIDERS -->
     <div class="secao">
-      <h2>Atualizar Progresso das Etapas</h2>
-      <div id="etapas-sliders"></div>
+      <h2>Atualizar Progresso — clique na etapa para ver subetapas</h2>
+      <div id="etapas-acordeao"></div>
       <button class="btn-add" id="btn-salvar-crono" style="margin-top:14px;width:100%;padding:12px">💾 Salvar Cronograma</button>
     </div>
+
+    <!-- GANTT EXPANSÍVEL -->
     <div class="secao">
-      <h2>Diagrama de Gantt — 34 semanas</h2>
+      <h2>Diagrama de Gantt — clique na etapa para expandir subetapas</h2>
       <div class="gantt-scroll" id="gantt-container"></div>
       <div class="legenda">
-        <div class="legenda-item"><div style="width:18px;height:10px;background:rgba(41,128,185,0.22);border:2px solid rgba(41,128,185,0.5);border-radius:2px"></div>Previsto</div>
-        <div class="legenda-item"><div style="width:18px;height:10px;background:rgba(39,174,96,0.65);border-radius:2px"></div>Executado</div>
+        <div class="legenda-item"><div style="width:18px;height:10px;background:rgba(41,128,185,0.22);border:2px solid rgba(41,128,185,0.5);border-radius:2px"></div>Etapa prevista</div>
+        <div class="legenda-item"><div style="width:18px;height:10px;background:rgba(39,174,96,0.65);border-radius:2px"></div>Etapa executada</div>
+        <div class="legenda-item"><div style="width:18px;height:10px;background:rgba(239,159,39,0.22);border:1px solid rgba(239,159,39,0.6);border-radius:2px"></div>Subetapa prevista</div>
+        <div class="legenda-item"><div style="width:18px;height:10px;background:rgba(39,174,96,0.45);border-radius:2px"></div>Subetapa executada</div>
         <div class="legenda-item"><div style="width:3px;height:14px;background:var(--verm);border-radius:1px"></div>Hoje</div>
       </div>
     </div>
+
+    <!-- TABELA DETALHAMENTO -->
     <div class="secao">
       <h2>Detalhamento por Etapa</h2>
       <div style="overflow-x:auto">
         <table>
-          <thead><tr><th>Etapa</th><th>Subetapas</th><th>Início</th><th>Fim</th><th>Dur.</th><th>Status</th><th>Progresso</th></tr></thead>
+          <thead><tr><th>Etapa</th><th>Início</th><th>Fim</th><th>Dur.</th><th>Status</th><th>Progresso</th></tr></thead>
           <tbody id="tabela-etapas"></tbody>
-          <tfoot><tr><td colspan="5">Avanço Geral</td><td id="tf-exec" colspan="2">—</td></tr></tfoot>
+          <tfoot><tr><td colspan="4">Avanço Geral</td><td id="tf-exec" colspan="2">—</td></tr></tfoot>
         </table>
       </div>
     </div>
@@ -213,23 +237,32 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 </main>
 <div class="status-bar" id="status-bar">Conectando...</div>
 <script>
-var ETAPAS_PADRAO = [{"nome": "Serviços Preliminares / Gabarito", "inicio": 0, "dur": 2, "exec": 10, "fase": "Início", "subs": ["Limpeza do terreno", "Locação da obra", "Gabarito e marcação"]}, {"nome": "Fundação", "inicio": 1, "dur": 5, "exec": 0, "fase": "Início", "subs": ["Escavação", "Armação de viga baldrame e sapata", "Montagem de formas", "Concretagem"]}, {"nome": "Estrutura Térreo", "inicio": 5, "dur": 5, "exec": 0, "fase": "Estrutura", "subs": ["Armação dos pilares", "Montagem de formas", "Concretagem dos pilares", "Armação das vigas", "Escoramento e laje", "Concretagem da laje"]}, {"nome": "Alvenaria Térreo", "inicio": 9, "dur": 4, "exec": 0, "fase": "Estrutura", "subs": ["Marcação e elevação das paredes", "Vergas e contravergas", "Regularização"]}, {"nome": "Estrutura 1º Pavimento", "inicio": 12, "dur": 5, "exec": 0, "fase": "Estrutura", "subs": ["Armação dos pilares", "Montagem de formas", "Concretagem dos pilares", "Armação das vigas", "Escoramento e laje", "Concretagem da laje"]}, {"nome": "Alvenaria 1º Pavimento", "inicio": 16, "dur": 4, "exec": 0, "fase": "Estrutura", "subs": ["Marcação e elevação das paredes", "Vergas e contravergas", "Regularização"]}, {"nome": "Cobertura", "inicio": 19, "dur": 4, "exec": 0, "fase": "Cobertura", "subs": ["Estrutura de madeira / metálica", "Telhamento"]}, {"nome": "Inst. Elétrica (tubulação)", "inicio": 20, "dur": 6, "exec": 0, "fase": "Instalações", "subs": ["Passagem de eletrodutos", "Caixas de passagem e tomadas"]}, {"nome": "Hidro — Esgoto", "inicio": 21, "dur": 3, "exec": 0, "fase": "Instalações", "subs": ["Passagem de tubulação de esgoto", "Instalação de caixas de inspeção"]}, {"nome": "Hidro — Água Fria", "inicio": 23, "dur": 3, "exec": 0, "fase": "Instalações", "subs": ["Passagem de tubulação de água fria", "Instalação de registros"]}, {"nome": "Hidro — Água Quente", "inicio": 25, "dur": 3, "exec": 0, "fase": "Instalações", "subs": ["Passagem de tubulação de água quente", "Conexões e soldas"]}, {"nome": "Hidro — Caixa d'Água", "inicio": 27, "dur": 2, "exec": 0, "fase": "Instalações", "subs": ["Instalação da caixa d'água", "Ligação à rede"]}, {"nome": "Reboco Interno e Externo", "inicio": 28, "dur": 6, "exec": 0, "fase": "Acabamento", "subs": ["Chapisco", "Reboco interno", "Reboco externo"]}];
+var ETAPAS_PADRAO = [{"nome": "Serviços Preliminares / Gabarito", "inicio": 0, "dur": 2, "fase": "Início", "subs": [{"nome": "Limpeza do terreno", "peso": 20, "exec": 0}, {"nome": "Locação da obra", "peso": 40, "exec": 0}, {"nome": "Gabarito e marcação", "peso": 40, "exec": 0}]}, {"nome": "Fundação", "inicio": 1, "dur": 5, "fase": "Início", "subs": [{"nome": "Escavação", "peso": 15, "exec": 0}, {"nome": "Armação de viga baldrame e sapata", "peso": 35, "exec": 0}, {"nome": "Montagem de formas", "peso": 20, "exec": 0}, {"nome": "Concretagem", "peso": 30, "exec": 0}]}, {"nome": "Estrutura Térreo", "inicio": 5, "dur": 5, "fase": "Estrutura", "subs": [{"nome": "Armação dos pilares", "peso": 20, "exec": 0}, {"nome": "Montagem de formas", "peso": 15, "exec": 0}, {"nome": "Concretagem dos pilares", "peso": 15, "exec": 0}, {"nome": "Armação das vigas", "peso": 20, "exec": 0}, {"nome": "Escoramento e laje", "peso": 15, "exec": 0}, {"nome": "Concretagem da laje", "peso": 15, "exec": 0}]}, {"nome": "Alvenaria Térreo", "inicio": 9, "dur": 4, "fase": "Estrutura", "subs": [{"nome": "Marcação e elevação das paredes", "peso": 60, "exec": 0}, {"nome": "Vergas e contravergas", "peso": 20, "exec": 0}, {"nome": "Regularização", "peso": 20, "exec": 0}]}, {"nome": "Estrutura 1º Pavimento", "inicio": 12, "dur": 5, "fase": "Estrutura", "subs": [{"nome": "Armação dos pilares", "peso": 20, "exec": 0}, {"nome": "Montagem de formas", "peso": 15, "exec": 0}, {"nome": "Concretagem dos pilares", "peso": 15, "exec": 0}, {"nome": "Armação das vigas", "peso": 20, "exec": 0}, {"nome": "Escoramento e laje", "peso": 15, "exec": 0}, {"nome": "Concretagem da laje", "peso": 15, "exec": 0}]}, {"nome": "Alvenaria 1º Pavimento", "inicio": 16, "dur": 4, "fase": "Estrutura", "subs": [{"nome": "Marcação e elevação das paredes", "peso": 60, "exec": 0}, {"nome": "Vergas e contravergas", "peso": 20, "exec": 0}, {"nome": "Regularização", "peso": 20, "exec": 0}]}, {"nome": "Cobertura", "inicio": 19, "dur": 4, "fase": "Cobertura", "subs": [{"nome": "Estrutura de madeira / metálica", "peso": 50, "exec": 0}, {"nome": "Telhamento", "peso": 50, "exec": 0}]}, {"nome": "Inst. Elétrica (tubulação)", "inicio": 20, "dur": 6, "fase": "Instalações", "subs": [{"nome": "Passagem de eletrodutos", "peso": 60, "exec": 0}, {"nome": "Caixas de passagem e tomadas", "peso": 40, "exec": 0}]}, {"nome": "Hidro — Esgoto", "inicio": 21, "dur": 3, "fase": "Instalações", "subs": [{"nome": "Passagem de tubulação de esgoto", "peso": 70, "exec": 0}, {"nome": "Instalação de caixas de inspeção", "peso": 30, "exec": 0}]}, {"nome": "Hidro — Água Fria", "inicio": 23, "dur": 3, "fase": "Instalações", "subs": [{"nome": "Passagem de tubulação de água fria", "peso": 70, "exec": 0}, {"nome": "Instalação de registros", "peso": 30, "exec": 0}]}, {"nome": "Hidro — Água Quente", "inicio": 25, "dur": 3, "fase": "Instalações", "subs": [{"nome": "Passagem de tubulação de água quente", "peso": 70, "exec": 0}, {"nome": "Conexões e soldas", "peso": 30, "exec": 0}]}, {"nome": "Hidro — Caixa d'Água", "inicio": 27, "dur": 2, "fase": "Instalações", "subs": [{"nome": "Instalação da caixa d'água", "peso": 60, "exec": 0}, {"nome": "Ligação à rede", "peso": 40, "exec": 0}]}, {"nome": "Reboco Interno e Externo", "inicio": 28, "dur": 6, "fase": "Acabamento", "subs": [{"nome": "Chapisco", "peso": 20, "exec": 0}, {"nome": "Reboco interno", "peso": 45, "exec": 0}, {"nome": "Reboco externo", "peso": 35, "exec": 0}]}];
 var SEMANAS = ["16/06", "23/06", "30/06", "07/07", "14/07", "21/07", "28/07", "04/08", "11/08", "18/08", "25/08", "01/09", "08/09", "15/09", "22/09", "29/09", "06/10", "13/10", "20/10", "27/10", "03/11", "10/11", "17/11", "24/11", "01/12", "08/12", "15/12", "22/12", "29/12", "05/01", "12/01", "19/01", "26/01", "02/02"];
 var TOTAL_MO = 182758.50, VALOR_ENG = 4000;
 var COR_CONCLUIDO = '#639922', COR_ANDAMENTO = '#EF9F27', COR_PENDENTE = '#B4B2A9';
 var CORES_FASE = {Inicio:'#378ADD',Estrutura:'#BA7517',Cobertura:'#993556',Instalacoes:'#1D9E75',Acabamento:'#7F77DD'};
-var FASES_NOME = {'Início':'Inicio','Estrutura':'Estrutura','Cobertura':'Cobertura','Instalações':'Instalacoes','Acabamento':'Acabamento'};
+var FASES_MAP = {'Início':'Inicio','Estrutura':'Estrutura','Cobertura':'Cobertura','Instalações':'Instalacoes','Acabamento':'Acabamento'};
+var TOTAL_SEM = 34;
 
 var dados = {
   eng: [],
   mo: [{data:'18/06/2026',valor:10000},{data:'19/06/2026',valor:8275.85}],
-  etapas: ETAPAS_PADRAO.map(function(e){ return Object.assign({},e); })
+  etapas: ETAPAS_PADRAO.map(function(e){ return JSON.parse(JSON.stringify(e)); })
 };
+
+var ganttExpandido = {};
+var acordeaoAberto = {};
 var chartEng=null,chartMo=null,chartRadar=null,chartDonut=null;
 
 function brl(v){ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }
 function pct(v){ return (typeof v==='number'?v.toFixed(1):'0.0')+'%'; }
 function corStatus(v){ return v===100?COR_CONCLUIDO:v>0?COR_ANDAMENTO:COR_PENDENTE; }
+
+function execEtapa(e){
+  var total = e.subs.reduce(function(s,sub){ return s + (sub.exec * sub.peso / 100); }, 0);
+  return Math.round(total);
+}
 
 firebase.initializeApp({
   apiKey: "AIzaSyDLF8Q3IFlhAMGIl5_D8skuY0wLP0SN0sI",
@@ -244,7 +277,7 @@ var ref = db.collection('config').doc('obra');
 
 function statusMsg(msg,ms){
   var el=document.getElementById('status-bar');
-  el.style.opacity='1';el.textContent=msg;
+  el.style.opacity='1'; el.textContent=msg;
   if(ms) setTimeout(function(){el.style.opacity='0';},ms);
 }
 
@@ -254,35 +287,50 @@ function inicializar(){
       ref.set(Object.assign({},dados,{atualizado:new Date()}));
       statusMsg('Dados inicializados!',3000);
     } else {
-      var d=snap.data();
-      if(!d.etapas) d.etapas=ETAPAS_PADRAO.map(function(e){return Object.assign({},e);});
-      else d.etapas=d.etapas.map(function(e,i){
-        var p=ETAPAS_PADRAO[i]||{};
-        return Object.assign({},p,e,{subs:p.subs||e.subs||[]});
-      });
-      dados=d;
+      var d = snap.data();
+      if(!d.etapas){
+        d.etapas = ETAPAS_PADRAO.map(function(e){ return JSON.parse(JSON.stringify(e)); });
+      } else {
+        d.etapas = d.etapas.map(function(e,i){
+          var p = ETAPAS_PADRAO[i] || {};
+          var merged = JSON.parse(JSON.stringify(p));
+          merged.subs = (p.subs||[]).map(function(ps,si){
+            var saved = (e.subs && e.subs[si]) ? e.subs[si] : {};
+            return Object.assign({},ps,{exec: saved.exec!==undefined ? saved.exec : ps.exec});
+          });
+          return merged;
+        });
+      }
+      dados = d;
       statusMsg('Conectado.',2000);
     }
     renderizar();
-    construirSliders();
-  }).catch(function(e){
+    construirAcordeao();
+  }).catch(function(){
     statusMsg('Offline — dados locais.',4000);
     renderizar();
-    construirSliders();
+    construirAcordeao();
   });
 
   ref.onSnapshot(function(snap){
-    if(snap.exists){
-      var d=snap.data();
-      if(!d.etapas) d.etapas=ETAPAS_PADRAO.map(function(e){return Object.assign({},e);});
-      else d.etapas=d.etapas.map(function(e,i){
-        var p=ETAPAS_PADRAO[i]||{};
-        return Object.assign({},p,e,{subs:p.subs||e.subs||[]});
+    if(!snap.exists) return;
+    var d = snap.data();
+    if(!d.etapas){
+      d.etapas = ETAPAS_PADRAO.map(function(e){ return JSON.parse(JSON.stringify(e)); });
+    } else {
+      d.etapas = d.etapas.map(function(e,i){
+        var p = ETAPAS_PADRAO[i] || {};
+        var merged = JSON.parse(JSON.stringify(p));
+        merged.subs = (p.subs||[]).map(function(ps,si){
+          var saved = (e.subs && e.subs[si]) ? e.subs[si] : {};
+          return Object.assign({},ps,{exec: saved.exec!==undefined ? saved.exec : ps.exec});
+        });
+        return merged;
       });
-      dados=d;
-      renderizar();
-      atualizarSliders();
     }
+    dados = d;
+    renderizar();
+    atualizarAcordeao();
   });
 }
 
@@ -294,37 +342,39 @@ function salvar(){
 
 function renderizar(){
   var eng=dados.eng, mo=dados.mo, etapas=dados.etapas;
-  var engPago=eng.length*VALOR_ENG;
-  document.getElementById('c-eng-pago').textContent=brl(engPago);
-  document.getElementById('c-eng-sub').textContent=eng.length+' parcela'+(eng.length!==1?'s':'')+' paga'+(eng.length!==1?'s':'');
-  document.getElementById('c-eng-prox').textContent=eng.length===0?'Julho/2026':proximoMes(eng[eng.length-1].mes);
-  var moPago=mo.reduce(function(s,p){return s+Number(p.valor);},0);
-  var moFalta=TOTAL_MO-moPago;
-  document.getElementById('c-mo-total').textContent=brl(TOTAL_MO);
-  document.getElementById('c-mo-pago').textContent=brl(moPago);
-  document.getElementById('c-mo-pct').textContent=pct(moPago/TOTAL_MO*100)+' pago';
-  document.getElementById('c-mo-falta').textContent=brl(moFalta);
-  var agora=new Date();
-  document.getElementById('data-atualizacao').textContent='Atualizado em '+agora.toLocaleDateString('pt-BR')+' às '+agora.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-  document.getElementById('tabela-eng').innerHTML=eng.length===0
-    ?'<tr><td colspan="5" style="text-align:center;color:#aaa;padding:14px">Nenhuma parcela registrada.</td></tr>'
-    :eng.map(function(p,i){return '<tr><td>'+p.mes+'</td><td>'+brl(VALOR_ENG)+'</td><td><span class="badge pago">Pago</span></td><td>'+p.data+'</td><td><button class="btn-del" onclick="delEng('+i+')">&#128465;</button></td></tr>';}).join('');
-  document.getElementById('tfoot-eng').textContent=brl(engPago);
-  document.getElementById('tabela-mo').innerHTML=mo.map(function(p,i){
+  var engPago = eng.length * VALOR_ENG;
+  document.getElementById('c-eng-pago').textContent = brl(engPago);
+  document.getElementById('c-eng-sub').textContent = eng.length+' parcela'+(eng.length!==1?'s':'')+' paga'+(eng.length!==1?'s':'');
+  document.getElementById('c-eng-prox').textContent = eng.length===0?'Julho/2026':proximoMes(eng[eng.length-1].mes);
+  var moPago = mo.reduce(function(s,p){return s+Number(p.valor);},0);
+  var moFalta = TOTAL_MO - moPago;
+  document.getElementById('c-mo-total').textContent = brl(TOTAL_MO);
+  document.getElementById('c-mo-pago').textContent = brl(moPago);
+  document.getElementById('c-mo-pct').textContent = pct(moPago/TOTAL_MO*100)+' pago';
+  document.getElementById('c-mo-falta').textContent = brl(moFalta);
+  var agora = new Date();
+  document.getElementById('data-atualizacao').textContent = 'Atualizado em '+agora.toLocaleDateString('pt-BR')+' às '+agora.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+  document.getElementById('tabela-eng').innerHTML = eng.length===0
+    ? '<tr><td colspan="5" style="text-align:center;color:#aaa;padding:14px">Nenhuma parcela registrada.</td></tr>'
+    : eng.map(function(p,i){ return '<tr><td>'+p.mes+'</td><td>'+brl(VALOR_ENG)+'</td><td><span class="badge pago">Pago</span></td><td>'+p.data+'</td><td><button class="btn-del" onclick="delEng('+i+')">&#128465;</button></td></tr>'; }).join('');
+  document.getElementById('tfoot-eng').textContent = brl(engPago);
+  document.getElementById('tabela-mo').innerHTML = mo.map(function(p,i){
     return '<tr><td>'+(i+1)+'&#186;</td><td>'+p.data+'</td><td>'+brl(Number(p.valor))+'</td><td><button class="btn-del" onclick="delMo('+i+')">&#128465;</button></td></tr>';
   }).join('');
-  document.getElementById('tfoot-mo-pago').textContent=brl(moPago);
-  document.getElementById('tfoot-mo-falta').textContent=brl(moFalta);
+  document.getElementById('tfoot-mo-pago').textContent = brl(moPago);
+  document.getElementById('tfoot-mo-falta').textContent = brl(moFalta);
   renderGraficosPgto(engPago,moPago,moFalta);
   renderCronograma(etapas);
 }
 
 function renderCronograma(etapas){
-  var avanco=etapas.reduce(function(s,e){return s+e.exec;},0)/etapas.length;
-  document.getElementById('c-avanco').textContent=pct(avanco);
-  var atual=etapas.find(function(e){return e.exec<100;})||etapas[etapas.length-1];
-  document.getElementById('c-etapa-atual').textContent=atual.nome;
-  document.getElementById('c-etapa-sub').textContent=atual.exec+'% executado';
+  var avanco = etapas.reduce(function(s,e){ return s+execEtapa(e); },0) / etapas.length;
+  document.getElementById('c-avanco').textContent = pct(avanco);
+  var atual = null;
+  for(var i=0;i<etapas.length;i++){ if(execEtapa(etapas[i])<100){atual=etapas[i];break;} }
+  if(!atual) atual=etapas[etapas.length-1];
+  document.getElementById('c-etapa-atual').textContent = atual.nome;
+  document.getElementById('c-etapa-sub').textContent = execEtapa(atual)+'% executado';
   renderBarras(etapas);
   renderRadar(etapas);
   renderDonut(etapas,avanco);
@@ -333,15 +383,16 @@ function renderCronograma(etapas){
 }
 
 function renderBarras(etapas){
-  document.getElementById('barras-etapas').innerHTML=etapas.map(function(e){
-    var cor=corStatus(e.exec);
-    var lbl=e.exec===100?'Concluído':e.exec>0?e.exec+'%':'Pendente';
+  document.getElementById('barras-etapas').innerHTML = etapas.map(function(e){
+    var ex = execEtapa(e);
+    var cor = corStatus(ex);
+    var lbl = ex===100?'Concluído':ex>0?ex+'%':'Pendente';
     return '<div style="margin-bottom:6px">'+
       '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px">'+
       '<span style="font-size:0.76rem;color:var(--preto);max-width:75%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+e.nome+'</span>'+
       '<span style="font-size:0.70rem;font-weight:600;color:var(--cinza-med)">'+lbl+'</span></div>'+
       '<div style="position:relative;height:8px;background:#e0e0e0;border-radius:4px;overflow:hidden">'+
-      '<div style="position:absolute;left:0;top:0;height:100%;width:'+e.exec+'%;background:'+cor+';border-radius:4px;transition:width 0.3s"></div></div></div>';
+      '<div style="position:absolute;left:0;top:0;height:100%;width:'+ex+'%;background:'+cor+';border-radius:4px;transition:width 0.3s"></div></div></div>';
   }).join('');
 }
 
@@ -350,17 +401,16 @@ function getFases(etapas){
   etapas.forEach(function(e){if(!seen[e.fase]){seen[e.fase]=true;result.push(e.fase);}});
   return result;
 }
-
 function mediaFase(fase,etapas){
   var fs=etapas.filter(function(e){return e.fase===fase;});
-  return Math.round(fs.reduce(function(s,e){return s+e.exec;},0)/fs.length);
+  return Math.round(fs.reduce(function(s,e){return s+execEtapa(e);},0)/fs.length);
 }
 
 function renderRadar(etapas){
-  var fs=getFases(etapas);
-  var vals=fs.map(function(f){return mediaFase(f,etapas);});
+  var fs = getFases(etapas);
+  var vals = fs.map(function(f){return mediaFase(f,etapas);});
   if(chartRadar) chartRadar.destroy();
-  chartRadar=new Chart(document.getElementById('grafico-radar'),{
+  chartRadar = new Chart(document.getElementById('grafico-radar'),{
     type:'radar',
     data:{labels:fs,datasets:[
       {label:'Previsto',data:fs.map(function(){return 100;}),borderColor:'rgba(41,128,185,0.4)',backgroundColor:'rgba(41,128,185,0.06)',borderWidth:1.5,borderDash:[4,3],pointRadius:0},
@@ -373,18 +423,18 @@ function renderRadar(etapas){
 }
 
 function renderDonut(etapas,avanco){
-  document.getElementById('donut-pct').textContent=Math.round(avanco)+'%';
+  document.getElementById('donut-pct').textContent = Math.round(avanco)+'%';
   if(chartDonut) chartDonut.destroy();
-  chartDonut=new Chart(document.getElementById('grafico-donut'),{
+  chartDonut = new Chart(document.getElementById('grafico-donut'),{
     type:'doughnut',
     data:{datasets:[{data:[avanco,100-avanco],backgroundColor:[COR_CONCLUIDO,'#e8e8e8'],borderWidth:0,hoverOffset:0}]},
     options:{responsive:true,maintainAspectRatio:false,cutout:'72%',plugins:{legend:{display:false},tooltip:{enabled:false}}}
   });
-  var fs=getFases(etapas);
-  document.getElementById('cards-fase').innerHTML=fs.map(function(f){
-    var p=mediaFase(f,etapas);
-    var chave=FASES_NOME[f]||'Inicio';
-    var cor=CORES_FASE[chave]||'#888';
+  var fs = getFases(etapas);
+  document.getElementById('cards-fase').innerHTML = fs.map(function(f){
+    var p = mediaFase(f,etapas);
+    var chave = FASES_MAP[f]||'Inicio';
+    var cor = CORES_FASE[chave]||'#888';
     return '<div class="card-fase" style="border-left:3px solid '+cor+'">'+
       '<div class="card-fase-nome">'+f+'</div>'+
       '<div class="card-fase-pct" style="color:'+cor+'">'+p+'%</div>'+
@@ -393,73 +443,157 @@ function renderDonut(etapas,avanco){
 }
 
 function renderGantt(etapas){
-  var TOTAL_SEM=34;
-  var semHoje=Math.max(0,Math.min(TOTAL_SEM-1,Math.floor((new Date()-new Date(2026,5,16))/(7*24*3600*1000))));
-  var meses=[{n:'Jun/26',de:0,ate:2},{n:'Jul/26',de:2,ate:6},{n:'Ago/26',de:6,ate:10},
+  var semHoje = Math.max(0,Math.min(TOTAL_SEM-1,Math.floor((new Date()-new Date(2026,5,16))/(7*24*3600*1000))));
+  var meses = [{n:'Jun/26',de:0,ate:2},{n:'Jul/26',de:2,ate:6},{n:'Ago/26',de:6,ate:10},
     {n:'Set/26',de:10,ate:14},{n:'Out/26',de:14,ate:18},{n:'Nov/26',de:18,ate:22},
     {n:'Dez/26',de:22,ate:26},{n:'Jan/27',de:26,ate:30},{n:'Fev/27',de:30,ate:34}];
-  var html='<table class="gantt-table"><thead><tr><th class="nome-col">Etapa</th>';
-  meses.forEach(function(m){html+='<th colspan="'+(m.ate-m.de)+'">'+m.n+'</th>';});
-  html+='</tr></thead><tbody>';
-  etapas.forEach(function(e){
-    var semExec=Math.round(e.dur*e.exec/100);
-    html+='<tr><td class="nome-cell">'+e.nome+'</td>';
+
+  var html = '<table class="gantt-table"><thead><tr>';
+  html += '<th class="gantt-th-nome">Etapa</th>';
+  meses.forEach(function(m){ html += '<th class="gantt-th-mes" colspan="'+(m.ate-m.de)+'">'+m.n+'</th>'; });
+  html += '</tr></thead><tbody>';
+
+  etapas.forEach(function(e,i){
+    var ex = execEtapa(e);
+    var semExec = Math.round(e.dur * ex / 100);
+    var isExp = ganttExpandido[i];
+    var rowClass = i%2===0 ? '' : 'gantt-tr-even';
+
+    html += '<tr class="'+rowClass+'" style="cursor:pointer" onclick="toggleGantt('+i+')">';
+    html += '<td class="gantt-td-nome gantt-td-nome-main"><span style="font-size:10px;color:var(--azul);margin-right:4px">'+(isExp?'▼':'▶')+'</span>'+e.nome+'</td>';
     for(var s=0;s<TOTAL_SEM;s++){
-      var isPrev=s>=e.inicio&&s<(e.inicio+e.dur);
-      var isExec=isPrev&&s<(e.inicio+semExec);
-      html+='<td class="'+(isExec?'gc-exec':isPrev?'gc-prev':'')+(s===semHoje?' gc-hoje':'')+'"></td>';
+      var isPrev = s>=e.inicio && s<(e.inicio+e.dur);
+      var isExec = isPrev && s<(e.inicio+semExec);
+      var cls = isExec?'gc-exec':isPrev?'gc-prev':'';
+      var hoje = s===semHoje?' gc-hoje':'';
+      html += '<td class="gantt-td '+cls+hoje+'"></td>';
     }
-    html+='</tr>';
+    html += '</tr>';
+
+    if(isExp){
+      var subDur = e.dur / e.subs.length;
+      e.subs.forEach(function(sub,si){
+        var subInicio = e.inicio + Math.floor(si*subDur);
+        var subFim = si===e.subs.length-1 ? e.inicio+e.dur : e.inicio+Math.floor((si+1)*subDur);
+        var subExecSem = Math.round((subFim-subInicio)*sub.exec/100);
+        html += '<tr style="background:#f8f9ff">';
+        html += '<td class="gantt-td-nome gantt-td-nome-sub">↳ '+sub.nome+' <span style="color:#EF9F27;font-weight:600">('+sub.peso+'%)</span></td>';
+        for(var s=0;s<TOTAL_SEM;s++){
+          var inSub = s>=subInicio && s<subFim;
+          var inExec = inSub && s<(subInicio+subExecSem);
+          var cls2 = inExec?'gc-sub-exec':inSub?'gc-sub-prev':'';
+          var hoje2 = s===semHoje?' gc-hoje':'';
+          html += '<td class="gantt-td-sub '+cls2+hoje2+'"></td>';
+        }
+        html += '</tr>';
+      });
+    }
   });
-  document.getElementById('gantt-container').innerHTML=html+'</tbody></table>';
+
+  document.getElementById('gantt-container').innerHTML = html+'</tbody></table>';
 }
+
+window.toggleGantt = function(i){
+  ganttExpandido[i] = !ganttExpandido[i];
+  renderGantt(dados.etapas);
+};
 
 function renderTabelaEtapas(etapas,avanco){
-  var ini=new Date(2026,5,16);
-  document.getElementById('tabela-etapas').innerHTML=etapas.map(function(e){
-    var di=new Date(ini.getTime()); di.setDate(di.getDate()+e.inicio*7);
-    var df=new Date(di.getTime()); df.setDate(df.getDate()+e.dur*7);
+  var ini = new Date(2026,5,16);
+  document.getElementById('tabela-etapas').innerHTML = etapas.map(function(e){
+    var di = new Date(ini.getTime()); di.setDate(di.getDate()+e.inicio*7);
+    var df = new Date(di.getTime()); df.setDate(df.getDate()+e.dur*7);
     function fmt(d){return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'2-digit'});}
-    var badge=e.exec===100?'pago':e.exec>0?'andamento':'pendente';
-    var label=e.exec===100?'Concluído':e.exec>0?e.exec+'%':'Pendente';
-    var subs=(e.subs||[]).map(function(s){return '<span style="display:inline-block;font-size:0.65rem;background:#f0f0f0;border-radius:10px;padding:1px 6px;margin:1px;color:var(--cinza-med)">'+s+'</span>';}).join('');
-    var cor=corStatus(e.exec);
-    return '<tr><td>'+e.nome+'</td><td style="max-width:200px">'+subs+'</td><td>'+fmt(di)+'</td><td>'+fmt(df)+'</td><td>'+e.dur+' sem.</td>'+
+    var ex = execEtapa(e);
+    var badge = ex===100?'pago':ex>0?'andamento':'pendente';
+    var label = ex===100?'Concluído':ex>0?ex+'%':'Pendente';
+    var cor = corStatus(ex);
+    return '<tr><td>'+e.nome+'</td><td>'+fmt(di)+'</td><td>'+fmt(df)+'</td><td>'+e.dur+' sem.</td>'+
       '<td><span class="badge '+badge+'">'+label+'</span></td>'+
-      '<td><div class="prog-bar-wrap"><div class="prog-bar" style="width:'+e.exec+'%;background:'+cor+'"></div></div></td></tr>';
+      '<td><div class="prog-bar-wrap"><div class="prog-bar" style="width:'+ex+'%;background:'+cor+'"></div></div></td></tr>';
   }).join('');
-  document.getElementById('tf-exec').textContent=pct(avanco);
+  document.getElementById('tf-exec').textContent = pct(avanco);
 }
 
-function construirSliders(){
-  var el=document.getElementById('etapas-sliders');
-  el.innerHTML='';
+function construirAcordeao(){
+  var el = document.getElementById('etapas-acordeao');
+  el.innerHTML = '';
   dados.etapas.forEach(function(e,i){
-    var div=document.createElement('div');
-    div.className='etapa-item';
-    var subs=(e.subs||[]).map(function(s){return '<span class="sub-tag">'+s+'</span>';}).join('');
-    var info=document.createElement('div'); info.className='etapa-info';
-    info.innerHTML='<div class="etapa-nome">'+e.nome+'</div><div class="etapa-subs">'+subs+'</div>';
-    var slider=document.createElement('input'); slider.type='range'; slider.className='etapa-slider';
-    slider.min=0; slider.max=100; slider.step=5; slider.value=e.exec; slider.id='sl-'+i;
-    var pctEl=document.createElement('div'); pctEl.className='etapa-pct'; pctEl.id='pct-'+i; pctEl.textContent=e.exec+'%';
-    slider.addEventListener('input',function(){
-      var val=parseInt(this.value);
-      dados.etapas[i].exec=val;
-      document.getElementById('pct-'+i).textContent=val+'%';
-      renderCronograma(dados.etapas);
+    var ex = execEtapa(e);
+    var cor = corStatus(ex);
+
+    var wrapper = document.createElement('div');
+
+    var header = document.createElement('div');
+    header.className = 'etapa-header';
+    header.innerHTML =
+      '<span class="etapa-toggle" id="toggle-'+i+'">▶</span>'+
+      '<span class="etapa-nome-txt">'+e.nome+'</span>'+
+      '<div class="etapa-exec-bar">'+
+        '<div class="etapa-exec-bar-wrap">'+
+          '<div class="etapa-exec-bar-fill" id="bar-etapa-'+i+'" style="width:'+ex+'%;background:'+cor+'"></div>'+
+        '</div>'+
+      '</div>'+
+      '<span class="etapa-exec-pct" id="pct-etapa-'+i+'">'+ex+'%</span>';
+
+    header.addEventListener('click', function(){
+      var subs = document.getElementById('subs-'+i);
+      var toggle = document.getElementById('toggle-'+i);
+      acordeaoAberto[i] = !acordeaoAberto[i];
+      subs.className = acordeaoAberto[i] ? 'subs-container aberto' : 'subs-container';
+      toggle.textContent = acordeaoAberto[i] ? '▼' : '▶';
     });
-    div.appendChild(info); div.appendChild(slider); div.appendChild(pctEl);
-    el.appendChild(div);
+
+    var subsDiv = document.createElement('div');
+    subsDiv.className = 'subs-container';
+    subsDiv.id = 'subs-'+i;
+
+    e.subs.forEach(function(sub,si){
+      var row = document.createElement('div');
+      row.className = 'sub-row';
+
+      var nomeEl = document.createElement('span'); nomeEl.className='sub-nome'; nomeEl.textContent=sub.nome;
+      var pesoEl = document.createElement('span'); pesoEl.className='sub-peso'; pesoEl.textContent=sub.peso+'%';
+      var slider = document.createElement('input'); slider.type='range'; slider.className='sub-slider';
+      slider.min=0; slider.max=100; slider.step=5; slider.value=sub.exec; slider.id='sl-'+i+'-'+si;
+      var pctEl = document.createElement('span'); pctEl.className='sub-pct'; pctEl.id='spct-'+i+'-'+si; pctEl.textContent=sub.exec+'%';
+
+      slider.addEventListener('input', function(){
+        var val = parseInt(this.value);
+        dados.etapas[i].subs[si].exec = val;
+        document.getElementById('spct-'+i+'-'+si).textContent = val+'%';
+        var newEx = execEtapa(dados.etapas[i]);
+        var newCor = corStatus(newEx);
+        document.getElementById('pct-etapa-'+i).textContent = newEx+'%';
+        document.getElementById('bar-etapa-'+i).style.width = newEx+'%';
+        document.getElementById('bar-etapa-'+i).style.background = newCor;
+        renderCronograma(dados.etapas);
+      });
+
+      row.appendChild(nomeEl); row.appendChild(pesoEl); row.appendChild(slider); row.appendChild(pctEl);
+      subsDiv.appendChild(row);
+    });
+
+    wrapper.appendChild(header);
+    wrapper.appendChild(subsDiv);
+    el.appendChild(wrapper);
   });
 }
 
-function atualizarSliders(){
+function atualizarAcordeao(){
   dados.etapas.forEach(function(e,i){
-    var sl=document.getElementById('sl-'+i);
-    var pc=document.getElementById('pct-'+i);
-    if(sl) sl.value=e.exec;
-    if(pc) pc.textContent=e.exec+'%';
+    var ex = execEtapa(e);
+    var cor = corStatus(ex);
+    var pctEl = document.getElementById('pct-etapa-'+i);
+    var barEl = document.getElementById('bar-etapa-'+i);
+    if(pctEl) pctEl.textContent = ex+'%';
+    if(barEl){ barEl.style.width=ex+'%'; barEl.style.background=cor; }
+    e.subs.forEach(function(sub,si){
+      var sl = document.getElementById('sl-'+i+'-'+si);
+      var sp = document.getElementById('spct-'+i+'-'+si);
+      if(sl) sl.value = sub.exec;
+      if(sp) sp.textContent = sub.exec+'%';
+    });
   });
 }
 
@@ -469,18 +603,17 @@ function renderGraficosPgto(engPago,moPago,moFalta){
     tooltip:{callbacks:{label:function(ctx){return ' '+brl(ctx.parsed);}}}
   },cutout:'65%'};
   if(chartEng) chartEng.destroy();
-  chartEng=new Chart(document.getElementById('grafico-eng'),{type:'doughnut',
+  chartEng = new Chart(document.getElementById('grafico-eng'),{type:'doughnut',
     data:{labels:['Pago','A Receber'],datasets:[{data:[engPago,Math.max(0.01,VALOR_ENG*12-engPago)],backgroundColor:['#27ae60','#e0e0e0'],borderWidth:0}]},options:opts});
   if(chartMo) chartMo.destroy();
-  chartMo=new Chart(document.getElementById('grafico-mo'),{type:'doughnut',
+  chartMo = new Chart(document.getElementById('grafico-mo'),{type:'doughnut',
     data:{labels:['Pago','A Pagar'],datasets:[{data:[moPago,moFalta],backgroundColor:['#27ae60','#c0392b'],borderWidth:0}]},options:opts});
 }
 
 function proximoMes(mesRef){
   var ms=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
-  var partes=mesRef.split('/'); var nome=partes[0]; var ano=partes[1];
-  var idx=ms.indexOf(nome); if(idx===-1) return 'Próximo';
-  var ni=(idx+1)%12; return ms[ni]+'/'+(ni===0?parseInt(ano)+1:parseInt(ano));
+  var p=mesRef.split('/'); var idx=ms.indexOf(p[0]); if(idx===-1) return 'Próximo';
+  var ni=(idx+1)%12; return ms[ni]+'/'+(ni===0?parseInt(p[1])+1:parseInt(p[1]));
 }
 
 document.getElementById('btn-add-eng').addEventListener('click',function(){
@@ -507,8 +640,8 @@ document.getElementById('btn-add-mo').addEventListener('click',function(){
 
 document.getElementById('btn-salvar-crono').addEventListener('click',function(){salvar();});
 
-window.delEng=function(i){if(!confirm('Remover esta parcela?'))return;dados.eng.splice(i,1);salvar().then(function(){renderizar();});};
-window.delMo=function(i){if(!confirm('Remover este pagamento?'))return;dados.mo.splice(i,1);salvar().then(function(){renderizar();});};
+window.delEng=function(i){if(!confirm('Remover?'))return;dados.eng.splice(i,1);salvar().then(function(){renderizar();});};
+window.delMo=function(i){if(!confirm('Remover?'))return;dados.mo.splice(i,1);salvar().then(function(){renderizar();});};
 
 document.querySelectorAll('.nav-tab').forEach(function(t){
   t.addEventListener('click',function(){
