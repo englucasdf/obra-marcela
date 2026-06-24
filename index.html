@@ -264,16 +264,19 @@ function execEtapa(e){
   return Math.round(total);
 }
 
-firebase.initializeApp({
-  apiKey: "AIzaSyDLF8Q3IFlhAMGIl5_D8skuY0wLP0SN0sI",
-  authDomain: "obra-marcela.firebaseapp.com",
-  projectId: "obra-marcela",
-  storageBucket: "obra-marcela.firebasestorage.app",
-  messagingSenderId: "793902441204",
-  appId: "1:793902441204:web:4104260ef8447289bf74a1"
-});
-var db = firebase.firestore();
-var ref = db.collection('config').doc('obra');
+var db, ref;
+try {
+  firebase.initializeApp({
+    apiKey: "AIzaSyDLF8Q3IFlhAMGIl5_D8skuY0wLP0SN0sI",
+    authDomain: "obra-marcela.firebaseapp.com",
+    projectId: "obra-marcela",
+    storageBucket: "obra-marcela.firebasestorage.app",
+    messagingSenderId: "793902441204",
+    appId: "1:793902441204:web:4104260ef8447289bf74a1"
+  });
+  db = firebase.firestore();
+  ref = db.collection('config').doc('obra');
+} catch(e) { console.warn('Firebase init error:', e); }
 
 function statusMsg(msg,ms){
   var el=document.getElementById('status-bar');
@@ -282,6 +285,7 @@ function statusMsg(msg,ms){
 }
 
 function inicializar(){
+  if(!ref){ renderizar(); construirAcordeao(); statusMsg('Offline — dados locais.',4000); return; }
   ref.get().then(function(snap){
     if(!snap.exists){
       ref.set(Object.assign({},dados,{atualizado:new Date()}));
@@ -335,6 +339,7 @@ function inicializar(){
 }
 
 function salvar(){
+  if(!ref){ statusMsg('Firebase nao configurado.',3000); return Promise.resolve(); }
   return ref.set(Object.assign({},dados,{atualizado:new Date()}))
     .then(function(){statusMsg('Salvo!',2000);})
     .catch(function(){statusMsg('Erro ao salvar.',3000);});
