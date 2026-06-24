@@ -436,18 +436,23 @@ function renderTabelaEtapas(etapas,avanco){
 }
 
 function construirSliders(){
-  document.getElementById('etapas-sliders').innerHTML=dados.etapas.map((e,i)=>{
-    const subs=(e.subs||[]).map(s=>'<span class="sub-tag">'+s+'</span>').join('');
-    return '<div class="etapa-item">'+
-      '<div class="etapa-info">'+
-        '<div class="etapa-nome">'+e.nome+'</div>'+
-        '<div class="etapa-subs">'+subs+'</div>'+
-      '</div>'+
-      '<input type="range" class="etapa-slider" min="0" max="100" step="5" value="'+e.exec+'" id="sl-'+i+'"'+
-        ' oninput="dados.etapas['+i+'].exec=parseInt(this.value);document.getElementById('pct-'+i+'').textContent=this.value+'%';renderCronograma(dados.etapas);">'+
-      '<div class="etapa-pct" id="pct-'+i+'">'+e.exec+'%</div>'+
-    '</div>';
-  }).join('');
+  const el = document.getElementById('etapas-sliders');
+  el.innerHTML = '';
+  dados.etapas.forEach(function(e, i){
+    const div = document.createElement('div');
+    div.className = 'etapa-item';
+    const subs = (e.subs||[]).map(function(s){ return '<span class="sub-tag">'+s+'</span>'; }).join('');
+    div.innerHTML = '<div class="etapa-info"><div class="etapa-nome">'+e.nome+'</div><div class="etapa-subs">'+subs+'</div></div>'+
+      '<input type="range" class="etapa-slider" min="0" max="100" step="5" value="'+e.exec+'" id="sl-'+i+'">'+
+      '<div class="etapa-pct" id="pct-'+i+'">'+e.exec+'%</div>';
+    div.querySelector('input').addEventListener('input', function(){
+      var val = parseInt(this.value);
+      dados.etapas[i].exec = val;
+      document.getElementById('pct-'+i).textContent = val+'%';
+      renderCronograma(dados.etapas);
+    });
+    el.appendChild(div);
+  });
 }
 
 function atualizarSliders(){
