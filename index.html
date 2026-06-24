@@ -8,13 +8,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
-:root{
-  --preto:#1a1a1a;--verm:#c0392b;--verm-esc:#96281b;
-  --cinza-esc:#2d2d2d;--cinza-med:#4a4a4a;--cinza-cla:#f4f4f4;
-  --branco:#ffffff;--verde:#27ae60;--verde-cla:#eafaf1;
-  --azul:#2980b9;--verm-cla:#fdf0ef;--borda:#e0e0e0;
-  --sombra:0 2px 12px rgba(0,0,0,0.10);
-}
+:root{--preto:#1a1a1a;--verm:#c0392b;--verm-esc:#96281b;--cinza-esc:#2d2d2d;--cinza-med:#4a4a4a;--cinza-cla:#f4f4f4;--branco:#ffffff;--verde:#27ae60;--verde-cla:#eafaf1;--azul:#2980b9;--verm-cla:#fdf0ef;--borda:#e0e0e0;--sombra:0 2px 12px rgba(0,0,0,0.10);}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Segoe UI',Arial,sans-serif;background:var(--cinza-cla);color:var(--preto);min-height:100vh;}
 header{background:var(--preto);padding:0 20px;display:flex;align-items:center;height:68px;border-bottom:3px solid var(--verm);position:sticky;top:0;z-index:100;}
@@ -37,31 +31,20 @@ main{max-width:1100px;margin:0 auto;padding:24px 16px 80px;}
 .card label{font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--cinza-med);display:block;margin-bottom:6px;}
 .card .valor{font-size:1.25rem;font-weight:700;}.card .sub{font-size:0.74rem;color:var(--cinza-med);margin-top:3px;}
 .grid-graficos{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px;}
+.grid-graficos-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:20px;}
 .grafico-wrap{background:var(--branco);border-radius:10px;padding:20px;box-shadow:var(--sombra);}
 .grafico-wrap h2{font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--cinza-med);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--borda);}
 .secao{background:var(--branco);border-radius:10px;padding:20px 22px;margin-bottom:18px;box-shadow:var(--sombra);}
 .secao h2{font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--cinza-med);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--borda);}
-
-/* FORMULÁRIO INLINE */
 .form-inline{background:var(--cinza-cla);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid var(--borda);}
-.form-inline h3{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--cinza-med);margin-bottom:12px;}
+.form-inline h3{font-size:0.76rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--cinza-med);margin-bottom:10px;}
 .form-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;}
 .form-group{display:flex;flex-direction:column;gap:4px;flex:1;min-width:120px;}
-.form-group label{font-size:0.72rem;font-weight:600;color:var(--cinza-med);text-transform:uppercase;letter-spacing:0.04em;}
+.form-group label{font-size:0.70rem;font-weight:600;color:var(--cinza-med);text-transform:uppercase;letter-spacing:0.04em;}
 .form-group input,.form-group select{padding:8px 10px;border:1px solid var(--borda);border-radius:7px;font-size:0.86rem;outline:none;background:var(--branco);}
-.form-group input:focus,.form-group select:focus{border-color:var(--verm);}
+.form-group input:focus{border-color:var(--verm);}
 .btn-add{background:var(--verm);color:var(--branco);border:none;padding:8px 18px;border-radius:7px;font-size:0.84rem;font-weight:700;cursor:pointer;white-space:nowrap;height:36px;}
 .btn-add:hover{background:var(--verm-esc);}
-
-/* ETAPAS CRONOGRAMA */
-.etapa-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--borda);}
-.etapa-item:last-child{border-bottom:none;}
-.etapa-nome{flex:1;font-size:0.84rem;font-weight:500;}
-.etapa-pct{font-size:0.80rem;font-weight:700;color:var(--verm);min-width:36px;text-align:right;}
-.etapa-slider{flex:2;}
-input[type=range]{-webkit-appearance:none;width:100%;height:5px;border-radius:3px;background:#e0e0e0;outline:none;}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--verm);cursor:pointer;}
-
 table{width:100%;border-collapse:collapse;font-size:0.84rem;}
 thead th{background:var(--cinza-esc);color:var(--branco);padding:8px 12px;text-align:left;font-size:0.71rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;}
 tbody tr:nth-child(even){background:var(--cinza-cla);}
@@ -72,10 +55,19 @@ tfoot td{padding:8px 12px;font-weight:700;background:var(--cinza-esc);color:var(
 .badge.pendente{background:var(--verm-cla);color:var(--verm);border:1px solid var(--verm);}
 .badge.andamento{background:#fff3cd;color:#856404;border:1px solid #ffc107;}
 .prog-bar-wrap{background:#e0e0e0;border-radius:4px;height:7px;min-width:70px;}
-.prog-bar{background:var(--verde);height:7px;border-radius:4px;}
+.prog-bar{height:7px;border-radius:4px;transition:width 0.3s;}
 .btn-del{background:none;border:none;color:#ccc;cursor:pointer;font-size:1rem;padding:0 4px;}
 .btn-del:hover{color:var(--verm);}
-
+.etapa-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--borda);}
+.etapa-item:last-child{border-bottom:none;}
+.etapa-info{flex:1;min-width:0;}
+.etapa-nome{font-size:0.84rem;font-weight:500;margin-bottom:4px;}
+.etapa-subs{display:flex;flex-wrap:wrap;gap:4px;}
+.sub-tag{font-size:0.68rem;background:var(--cinza-cla);border:1px solid var(--borda);border-radius:12px;padding:2px 8px;color:var(--cinza-med);}
+.etapa-pct{font-size:0.82rem;font-weight:700;min-width:36px;text-align:right;}
+.etapa-slider{flex:2;min-width:80px;}
+input[type=range]{-webkit-appearance:none;width:100%;height:5px;border-radius:3px;background:#e0e0e0;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--verm);cursor:pointer;}
 .gantt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
 .gantt-table{border-collapse:collapse;white-space:nowrap;width:100%;}
 .gantt-table th{background:var(--cinza-esc);color:var(--branco);padding:5px 3px;text-align:center;font-size:0.65rem;font-weight:600;border:1px solid rgba(255,255,255,0.1);}
@@ -87,11 +79,17 @@ tfoot td{padding:8px 12px;font-weight:700;background:var(--cinza-esc);color:var(
 .gc-prev{background:rgba(41,128,185,0.20);border-top:2px solid rgba(41,128,185,0.45);border-bottom:2px solid rgba(41,128,185,0.45);}
 .gc-exec{background:rgba(39,174,96,0.65);}
 .gc-hoje{border-left:2px solid var(--verm)!important;}
-.legenda-gantt{display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;}
-.legenda-item{display:flex;align-items:center;gap:5px;font-size:0.75rem;color:var(--cinza-med);}
+.legenda{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;}
+.legenda-item{display:flex;align-items:center;gap:5px;font-size:0.74rem;color:var(--cinza-med);}
+.cards-fase{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:12px;}
+.card-fase{background:var(--cinza-cla);border-radius:8px;padding:10px 12px;}
+.card-fase-nome{font-size:0.70rem;color:var(--cinza-med);margin-bottom:4px;}
+.card-fase-pct{font-size:1.1rem;font-weight:700;margin-bottom:6px;}
+.card-fase-bar{height:4px;background:#e0e0e0;border-radius:2px;}
+.card-fase-fill{height:4px;border-radius:2px;transition:width 0.3s;}
 .status-bar{background:var(--cinza-esc);color:rgba(255,255,255,0.7);font-size:0.71rem;text-align:center;padding:4px;position:fixed;bottom:0;left:0;right:0;z-index:50;transition:opacity 0.5s;}
 @media(max-width:680px){
-  .grid-graficos{grid-template-columns:1fr;}
+  .grid-graficos,.grid-graficos-3{grid-template-columns:1fr;}
   .nav-tab{padding:11px 14px;font-size:0.76rem;}
   main{padding:16px 12px 80px;}
 }
@@ -119,7 +117,7 @@ tfoot td{padding:8px 12px;font-weight:700;background:var(--cinza-esc);color:var(
     <div class="tag-status">Em Andamento</div>
   </div>
 
-  <!-- ══ PAGAMENTOS ══ -->
+  <!-- PAGAMENTOS -->
   <div id="pag-pagamentos" class="pagina ativa">
     <div class="grid-cards">
       <div class="card verde"><label>Engenheiro — Pago</label><div class="valor" id="c-eng-pago">—</div><div class="sub" id="c-eng-sub">—</div></div>
@@ -128,26 +126,17 @@ tfoot td{padding:8px 12px;font-weight:700;background:var(--cinza-esc);color:var(
       <div class="card verde"><label>MO — Pago</label><div class="valor" id="c-mo-pago">—</div><div class="sub" id="c-mo-pct">—</div></div>
       <div class="card verm"><label>MO — A Pagar</label><div class="valor" id="c-mo-falta">—</div><div class="sub">Saldo restante</div></div>
     </div>
-
     <div class="grid-graficos">
-      <div class="grafico-wrap"><h2>Engenheiro</h2><div style="height:190px"><canvas id="grafico-eng"></canvas></div></div>
-      <div class="grafico-wrap"><h2>Mão de Obra</h2><div style="height:190px"><canvas id="grafico-mo"></canvas></div></div>
+      <div class="grafico-wrap"><h2>Engenheiro</h2><div style="height:190px"><canvas id="grafico-eng" role="img" aria-label="Gráfico de honorários do engenheiro"></canvas></div></div>
+      <div class="grafico-wrap"><h2>Mão de Obra</h2><div style="height:190px"><canvas id="grafico-mo" role="img" aria-label="Gráfico de pagamentos da mão de obra"></canvas></div></div>
     </div>
-
-    <!-- FORM: Parcela Engenheiro -->
     <div class="secao">
       <h2>Honorários do Engenheiro</h2>
       <div class="form-inline">
         <h3>+ Registrar Parcela Paga (R$ 4.000)</h3>
         <div class="form-row">
-          <div class="form-group">
-            <label>Mês de referência</label>
-            <input type="text" id="inp-eng-mes" placeholder="Ex: Julho/2026"/>
-          </div>
-          <div class="form-group">
-            <label>Data do pagamento</label>
-            <input type="date" id="inp-eng-data"/>
-          </div>
+          <div class="form-group"><label>Mês de referência</label><input type="text" id="inp-eng-mes" placeholder="Ex: Julho/2026"/></div>
+          <div class="form-group"><label>Data do pagamento</label><input type="date" id="inp-eng-data"/></div>
           <button class="btn-add" id="btn-add-eng">Registrar</button>
         </div>
       </div>
@@ -157,21 +146,13 @@ tfoot td{padding:8px 12px;font-weight:700;background:var(--cinza-esc);color:var(
         <tfoot><tr><td>Total Pago</td><td id="tfoot-eng" colspan="4">—</td></tr></tfoot>
       </table>
     </div>
-
-    <!-- FORM: Pagamento MO -->
     <div class="secao">
       <h2>Mão de Obra — Pagamentos Semanais</h2>
       <div class="form-inline">
         <h3>+ Registrar Pagamento</h3>
         <div class="form-row">
-          <div class="form-group">
-            <label>Data</label>
-            <input type="date" id="inp-mo-data"/>
-          </div>
-          <div class="form-group">
-            <label>Valor (R$)</label>
-            <input type="number" id="inp-mo-valor" placeholder="0,00" step="0.01"/>
-          </div>
+          <div class="form-group"><label>Data</label><input type="date" id="inp-mo-data"/></div>
+          <div class="form-group"><label>Valor (R$)</label><input type="number" id="inp-mo-valor" placeholder="0,00" step="0.01"/></div>
           <button class="btn-add" id="btn-add-mo">Registrar</button>
         </div>
       </div>
@@ -186,7 +167,7 @@ tfoot td{padding:8px 12px;font-weight:700;background:var(--cinza-esc);color:var(
     </div>
   </div>
 
-  <!-- ══ CRONOGRAMA ══ -->
+  <!-- CRONOGRAMA -->
   <div id="pag-cronograma" class="pagina">
     <div class="grid-cards">
       <div class="card azul"><label>Início</label><div class="valor" style="font-size:1rem">16/06/2026</div><div class="sub">Data de início</div></div>
@@ -195,35 +176,60 @@ tfoot td{padding:8px 12px;font-weight:700;background:var(--cinza-esc);color:var(
       <div class="card verm"><label>Etapa Atual</label><div class="valor" style="font-size:0.85rem;line-height:1.3" id="c-etapa-atual">—</div><div class="sub" id="c-etapa-sub">—</div></div>
     </div>
 
-    <div class="grid-graficos">
-      <div class="grafico-wrap"><h2>Avanço por Etapa</h2><div style="height:360px"><canvas id="grafico-fisico"></canvas></div></div>
-      <div class="grafico-wrap"><h2>Curva S — Previsto vs. Executado</h2><div style="height:360px"><canvas id="grafico-curvas"></canvas></div></div>
+    <!-- 3 GRÁFICOS -->
+    <div class="grid-graficos-3">
+      <div class="grafico-wrap" style="grid-column: span 1;">
+        <h2>Avanço por Etapa</h2>
+        <div id="barras-etapas"></div>
+        <div class="legenda" style="margin-top:10px;">
+          <div class="legenda-item"><div style="width:10px;height:10px;border-radius:2px;background:#639922;"></div>Concluído</div>
+          <div class="legenda-item"><div style="width:10px;height:10px;border-radius:2px;background:#EF9F27;"></div>Em andamento</div>
+          <div class="legenda-item"><div style="width:10px;height:10px;border-radius:2px;background:#B4B2A9;"></div>Pendente</div>
+        </div>
+      </div>
+      <div class="grafico-wrap">
+        <h2>Radar por Fase</h2>
+        <div style="height:260px"><canvas id="grafico-radar" role="img" aria-label="Radar de avanço por fase da obra"></canvas></div>
+      </div>
+      <div class="grafico-wrap">
+        <h2>Avanço Geral</h2>
+        <div style="position:relative;height:160px;max-width:160px;margin:0 auto;">
+          <canvas id="grafico-donut" role="img" aria-label="Rosca com avanço geral da obra"></canvas>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;">
+            <div style="font-size:1.4rem;font-weight:700;" id="donut-pct">0%</div>
+            <div style="font-size:0.70rem;color:var(--cinza-med);">concluído</div>
+          </div>
+        </div>
+        <div class="cards-fase" id="cards-fase"></div>
+      </div>
     </div>
 
-    <!-- SLIDERS ETAPAS -->
+    <!-- SLIDERS COM SUBETAPAS -->
     <div class="secao">
       <h2>Atualizar Progresso das Etapas</h2>
       <div id="etapas-sliders"></div>
       <button class="btn-add" id="btn-salvar-crono" style="margin-top:14px;width:100%;padding:12px">💾 Salvar Cronograma</button>
     </div>
 
+    <!-- GANTT -->
     <div class="secao">
       <h2>Diagrama de Gantt — 34 semanas</h2>
       <div class="gantt-scroll" id="gantt-container"></div>
-      <div class="legenda-gantt">
-        <div class="legenda-item"><div style="width:20px;height:10px;background:rgba(41,128,185,0.22);border:2px solid rgba(41,128,185,0.5);border-radius:2px;"></div>Previsto</div>
-        <div class="legenda-item"><div style="width:20px;height:10px;background:rgba(39,174,96,0.65);border-radius:2px;"></div>Executado</div>
+      <div class="legenda">
+        <div class="legenda-item"><div style="width:18px;height:10px;background:rgba(41,128,185,0.22);border:2px solid rgba(41,128,185,0.5);border-radius:2px;"></div>Previsto</div>
+        <div class="legenda-item"><div style="width:18px;height:10px;background:rgba(39,174,96,0.65);border-radius:2px;"></div>Executado</div>
         <div class="legenda-item"><div style="width:3px;height:14px;background:var(--verm);border-radius:1px;"></div>Hoje</div>
       </div>
     </div>
 
+    <!-- TABELA DETALHAMENTO -->
     <div class="secao">
-      <h2>Detalhamento</h2>
+      <h2>Detalhamento por Etapa</h2>
       <div style="overflow-x:auto">
         <table>
-          <thead><tr><th>Etapa</th><th>Início</th><th>Fim</th><th>Dur.</th><th>Status</th><th>Progresso</th></tr></thead>
+          <thead><tr><th>Etapa</th><th>Subetapas</th><th>Início</th><th>Fim</th><th>Dur.</th><th>Status</th><th>Progresso</th></tr></thead>
           <tbody id="tabela-etapas"></tbody>
-          <tfoot><tr><td colspan="4">Avanço Geral</td><td id="tf-exec" colspan="2">—</td></tr></tfoot>
+          <tfoot><tr><td colspan="5">Avanço Geral</td><td id="tf-exec" colspan="2">—</td></tr></tfoot>
         </table>
       </div>
     </div>
@@ -233,20 +239,21 @@ tfoot td{padding:8px 12px;font-weight:700;background:var(--cinza-esc);color:var(
 <div class="status-bar" id="status-bar">Conectando...</div>
 
 <script>
-const ETAPAS_PADRAO = [{"nome": "Serviços Preliminares / Gabarito", "inicio": 0, "dur": 2, "exec": 10}, {"nome": "Fundação", "inicio": 1, "dur": 5, "exec": 0}, {"nome": "Estrutura Térreo", "inicio": 5, "dur": 5, "exec": 0}, {"nome": "Alvenaria Térreo", "inicio": 9, "dur": 4, "exec": 0}, {"nome": "Estrutura 1º Pavimento", "inicio": 12, "dur": 5, "exec": 0}, {"nome": "Alvenaria 1º Pavimento", "inicio": 16, "dur": 4, "exec": 0}, {"nome": "Cobertura", "inicio": 19, "dur": 4, "exec": 0}, {"nome": "Inst. Elétrica (tubulação)", "inicio": 20, "dur": 6, "exec": 0}, {"nome": "Hidro — Esgoto", "inicio": 21, "dur": 3, "exec": 0}, {"nome": "Hidro — Água Fria", "inicio": 23, "dur": 3, "exec": 0}, {"nome": "Hidro — Água Quente", "inicio": 25, "dur": 3, "exec": 0}, {"nome": "Hidro — Caixa d'Água", "inicio": 27, "dur": 2, "exec": 0}, {"nome": "Reboco Interno e Externo", "inicio": 28, "dur": 6, "exec": 0}];
-const SEMANAS       = ["16/06", "23/06", "30/06", "07/07", "14/07", "21/07", "28/07", "04/08", "11/08", "18/08", "25/08", "01/09", "08/09", "15/09", "22/09", "29/09", "06/10", "13/10", "20/10", "27/10", "03/11", "10/11", "17/11", "24/11", "01/12", "08/12", "15/12", "22/12", "29/12", "05/01", "12/01", "19/01", "26/01", "02/02"];
-const TOTAL_MO      = 182758.50;
-const VALOR_ENG     = 4000;
+const ETAPAS_PADRAO = [{"nome": "Serviços Preliminares / Gabarito", "inicio": 0, "dur": 2, "exec": 10, "fase": "Início", "subs": ["Limpeza do terreno", "Locação da obra", "Gabarito e marcação"]}, {"nome": "Fundação", "inicio": 1, "dur": 5, "exec": 0, "fase": "Início", "subs": ["Escavação", "Armação de viga baldrame e sapata", "Montagem de formas", "Concretagem"]}, {"nome": "Estrutura Térreo", "inicio": 5, "dur": 5, "exec": 0, "fase": "Estrutura", "subs": ["Armação dos pilares", "Montagem de formas", "Concretagem dos pilares", "Armação das vigas", "Escoramento e laje", "Concretagem da laje"]}, {"nome": "Alvenaria Térreo", "inicio": 9, "dur": 4, "exec": 0, "fase": "Estrutura", "subs": ["Marcação e elevação das paredes", "Vergas e contravergas", "Regularização"]}, {"nome": "Estrutura 1º Pavimento", "inicio": 12, "dur": 5, "exec": 0, "fase": "Estrutura", "subs": ["Armação dos pilares", "Montagem de formas", "Concretagem dos pilares", "Armação das vigas", "Escoramento e laje", "Concretagem da laje"]}, {"nome": "Alvenaria 1º Pavimento", "inicio": 16, "dur": 4, "exec": 0, "fase": "Estrutura", "subs": ["Marcação e elevação das paredes", "Vergas e contravergas", "Regularização"]}, {"nome": "Cobertura", "inicio": 19, "dur": 4, "exec": 0, "fase": "Cobertura", "subs": ["Estrutura de madeira / metálica", "Telhamento"]}, {"nome": "Inst. Elétrica (tubulação)", "inicio": 20, "dur": 6, "exec": 0, "fase": "Instalações", "subs": ["Passagem de eletrodutos", "Caixas de passagem e tomadas"]}, {"nome": "Hidro — Esgoto", "inicio": 21, "dur": 3, "exec": 0, "fase": "Instalações", "subs": ["Passagem de tubulação de esgoto", "Instalação de caixas de inspeção"]}, {"nome": "Hidro — Água Fria", "inicio": 23, "dur": 3, "exec": 0, "fase": "Instalações", "subs": ["Passagem de tubulação de água fria", "Instalação de registros"]}, {"nome": "Hidro — Água Quente", "inicio": 25, "dur": 3, "exec": 0, "fase": "Instalações", "subs": ["Passagem de tubulação de água quente", "Conexões e soldas"]}, {"nome": "Hidro — Caixa d'Água", "inicio": 27, "dur": 2, "exec": 0, "fase": "Instalações", "subs": ["Instalação da caixa d'água", "Ligação à rede"]}, {"nome": "Reboco Interno e Externo", "inicio": 28, "dur": 6, "exec": 0, "fase": "Acabamento", "subs": ["Chapisco", "Reboco interno", "Reboco externo"]}];
+const SEMANAS = ["16/06", "23/06", "30/06", "07/07", "14/07", "21/07", "28/07", "04/08", "11/08", "18/08", "25/08", "01/09", "08/09", "15/09", "22/09", "29/09", "06/10", "13/10", "20/10", "27/10", "03/11", "10/11", "17/11", "24/11", "01/12", "08/12", "15/12", "22/12", "29/12", "05/01", "12/01", "19/01", "26/01", "02/02"];
+const TOTAL_MO = 182758.50, VALOR_ENG = 4000;
+const COR_CONCLUIDO = '#639922', COR_ANDAMENTO = '#EF9F27', COR_PENDENTE = '#B4B2A9';
+const CORES_FASE = {Início:'#378ADD',Estrutura:'#BA7517',Cobertura:'#993556',Instalações:'#1D9E75',Acabamento:'#7F77DD'};
 
 let dados = {
   eng: [],
   mo: [{data:'18/06/2026',valor:10000},{data:'19/06/2026',valor:8275.85}],
   etapas: ETAPAS_PADRAO.map(e=>({...e}))
 };
-
-let chartEng=null,chartMo=null,chartFisico=null,chartCurvas=null;
-const brl = v => v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
-const pct = v => (typeof v==='number'?v.toFixed(1):'0.0')+'%';
+let chartEng=null,chartMo=null,chartRadar=null,chartDonut=null;
+const brl = v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const pct = v=>(typeof v==='number'?v.toFixed(1):'0.0')+'%';
+const corStatus = e=>e===100?COR_CONCLUIDO:e>0?COR_ANDAMENTO:COR_PENDENTE;
 
 firebase.initializeApp({
   apiKey: "AIzaSyDLF8Q3IFlhAMGIl5_D8skuY0wLP0SN0sI",
@@ -256,86 +263,65 @@ firebase.initializeApp({
   messagingSenderId: "793902441204",
   appId: "1:793902441204:web:4104260ef8447289bf74a1"
 });
-const db = firebase.firestore();
-const ref = db.collection('config').doc('obra');
+const db=firebase.firestore(), ref=db.collection('config').doc('obra');
 
 async function inicializar(){
   try{
-    const snap = await ref.get();
+    const snap=await ref.get();
     if(!snap.exists){
-      await ref.set({...dados, atualizado: new Date()});
-      status('✅ Dados inicializados!', 3000);
+      await ref.set({...dados,atualizado:new Date()});
+      status('✅ Dados inicializados!',3000);
     } else {
-      const d = snap.data();
-      if(!d.etapas) d.etapas = ETAPAS_PADRAO.map(e=>({...e}));
-      dados = d;
-      status('✅ Conectado ao Firebase.', 2000);
+      const d=snap.data();
+      if(!d.etapas) d.etapas=ETAPAS_PADRAO.map(e=>({...e}));
+      else d.etapas=d.etapas.map((e,i)=>{const p=ETAPAS_PADRAO[i]||{};return {...p,...e,subs:p.subs||e.subs||([])}});
+      dados=d;
+      status('✅ Conectado.',2000);
     }
-  } catch(e){
-    status('⚠️ Offline — exibindo dados locais.', 4000);
-  }
+  }catch(e){status('⚠️ Offline — dados locais.',4000);}
   renderizar();
   construirSliders();
-
-  // Tempo real
   ref.onSnapshot(snap=>{
     if(snap.exists){
       const d=snap.data();
       if(!d.etapas) d.etapas=ETAPAS_PADRAO.map(e=>({...e}));
-      dados=d;
-      renderizar();
-      atualizarSliders();
+      else d.etapas=d.etapas.map((e,i)=>{const p=ETAPAS_PADRAO[i]||{};return {...p,...e,subs:p.subs||e.subs||([])}});
+      dados=d; renderizar(); atualizarSliders();
     }
   });
 }
 
-function status(msg, ms){
+function status(msg,ms){
   const el=document.getElementById('status-bar');
-  el.style.opacity='1'; el.textContent=msg;
-  if(ms) setTimeout(()=>{el.style.opacity='0';}, ms);
+  el.style.opacity='1';el.textContent=msg;
+  if(ms) setTimeout(()=>el.style.opacity='0',ms);
 }
 
 async function salvar(){
-  try{
-    await ref.set({...dados, atualizado: new Date()});
-    status('✅ Salvo!', 2000);
-  } catch(e){ status('⚠️ Erro ao salvar.', 3000); }
+  try{await ref.set({...dados,atualizado:new Date()});status('✅ Salvo!',2000);}
+  catch(e){status('⚠️ Erro ao salvar.',3000);}
 }
 
-// ── RENDER ────────────────────────────────────────────────────────────────────
 function renderizar(){
-  const {eng,mo,etapas} = dados;
-
-  const engPago = eng.length*VALOR_ENG;
-  document.getElementById('c-eng-pago').textContent = brl(engPago);
-  document.getElementById('c-eng-sub').textContent  = eng.length+' parcela'+(eng.length!==1?'s':'')+' paga'+(eng.length!==1?'s':'');
-  document.getElementById('c-eng-prox').textContent = eng.length===0?'Julho/2026':proximoMes(eng[eng.length-1].mes);
-
-  const moPago=mo.reduce((s,p)=>s+Number(p.valor),0), moFalta=TOTAL_MO-moPago;
-  document.getElementById('c-mo-total').textContent = brl(TOTAL_MO);
-  document.getElementById('c-mo-pago').textContent  = brl(moPago);
-  document.getElementById('c-mo-pct').textContent   = pct(moPago/TOTAL_MO*100)+' pago';
-  document.getElementById('c-mo-falta').textContent = brl(moFalta);
-
+  const {eng,mo,etapas}=dados;
+  const engPago=eng.length*VALOR_ENG;
+  document.getElementById('c-eng-pago').textContent=brl(engPago);
+  document.getElementById('c-eng-sub').textContent=eng.length+' parcela'+(eng.length!==1?'s':'')+' paga'+(eng.length!==1?'s':'');
+  document.getElementById('c-eng-prox').textContent=eng.length===0?'Julho/2026':proximoMes(eng[eng.length-1].mes);
+  const moPago=mo.reduce((s,p)=>s+Number(p.valor),0),moFalta=TOTAL_MO-moPago;
+  document.getElementById('c-mo-total').textContent=brl(TOTAL_MO);
+  document.getElementById('c-mo-pago').textContent=brl(moPago);
+  document.getElementById('c-mo-pct').textContent=pct(moPago/TOTAL_MO*100)+' pago';
+  document.getElementById('c-mo-falta').textContent=brl(moFalta);
   const agora=new Date();
-  document.getElementById('data-atualizacao').textContent =
-    'Atualizado em '+agora.toLocaleDateString('pt-BR')+' às '+agora.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-
-  // Tabela eng
-  document.getElementById('tabela-eng').innerHTML = eng.length===0
+  document.getElementById('data-atualizacao').textContent='Atualizado em '+agora.toLocaleDateString('pt-BR')+' às '+agora.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+  document.getElementById('tabela-eng').innerHTML=eng.length===0
     ?'<tr><td colspan="5" style="text-align:center;color:#aaa;padding:14px">Nenhuma parcela registrada.</td></tr>'
-    :eng.map((p,i)=>'<tr><td>'+p.mes+'</td><td>'+brl(VALOR_ENG)+'</td><td><span class="badge pago">Pago</span></td><td>'+p.data+'</td>'+
-      '<td><button class="btn-del" onclick="delEng('+i+')">🗑</button></td></tr>').join('');
+    :eng.map((p,i)=>'<tr><td>'+p.mes+'</td><td>'+brl(VALOR_ENG)+'</td><td><span class="badge pago">Pago</span></td><td>'+p.data+'</td><td><button class="btn-del" onclick="delEng('+i+')">🗑</button></td></tr>').join('');
   document.getElementById('tfoot-eng').textContent=brl(engPago);
-
-  // Tabela MO
-  document.getElementById('tabela-mo').innerHTML = mo.map((p,i)=>
-    '<tr><td>'+(i+1)+'º</td><td>'+p.data+'</td><td>'+brl(Number(p.valor))+'</td>'+
-    '<td><button class="btn-del" onclick="delMo('+i+')">🗑</button></td></tr>'
-  ).join('');
-  document.getElementById('tfoot-mo-pago').textContent  = brl(moPago);
-  document.getElementById('tfoot-mo-falta').textContent = brl(moFalta);
-
+  document.getElementById('tabela-mo').innerHTML=mo.map((p,i)=>'<tr><td>'+(i+1)+'º</td><td>'+p.data+'</td><td>'+brl(Number(p.valor))+'</td><td><button class="btn-del" onclick="delMo('+i+')">🗑</button></td></tr>').join('');
+  document.getElementById('tfoot-mo-pago').textContent=brl(moPago);
+  document.getElementById('tfoot-mo-falta').textContent=brl(moFalta);
   renderGraficosPgto(engPago,moPago,moFalta);
   renderCronograma(etapas);
 }
@@ -346,41 +332,68 @@ function renderCronograma(etapas){
   const atual=etapas.find(e=>e.exec<100)||etapas[etapas.length-1];
   document.getElementById('c-etapa-atual').textContent=atual.nome;
   document.getElementById('c-etapa-sub').textContent=atual.exec+'% executado';
-
-  const ini=new Date(2026,5,16);
-  document.getElementById('tabela-etapas').innerHTML=etapas.map(e=>{
-    const di=new Date(ini); di.setDate(di.getDate()+e.inicio*7);
-    const df=new Date(di);  df.setDate(df.getDate()+e.dur*7);
-    const fmt=d=>d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'2-digit'});
-    const badge=e.exec===100?'pago':e.exec>0?'andamento':'pendente';
-    const label=e.exec===100?'Concluído':e.exec>0?e.exec+'%':'Pendente';
-    return '<tr><td>'+e.nome+'</td><td>'+fmt(di)+'</td><td>'+fmt(df)+'</td><td>'+e.dur+' sem.</td>'+
-      '<td><span class="badge '+badge+'">'+label+'</span></td>'+
-      '<td><div class="prog-bar-wrap"><div class="prog-bar" style="width:'+e.exec+'%"></div></div></td></tr>';
-  }).join('');
-  document.getElementById('tf-exec').textContent=pct(avanco);
-
+  renderBarras(etapas);
+  renderRadar(etapas);
+  renderDonut(etapas,avanco);
   renderGantt(etapas);
-  renderGraficosCronograma(etapas);
+  renderTabelaEtapas(etapas,avanco);
 }
 
-function construirSliders(){
-  document.getElementById('etapas-sliders').innerHTML = dados.etapas.map((e,i)=>`
-    <div class="etapa-item">
-      <div class="etapa-nome">${e.nome}</div>
-      <input type="range" class="etapa-slider" min="0" max="100" step="5" value="${e.exec}"
-        oninput="dados.etapas[${i}].exec=parseInt(this.value);this.nextElementSibling.textContent=this.value+'%';renderCronograma(dados.etapas);"
-        id="slider-${i}"/>
-      <div class="etapa-pct">${e.exec}%</div>
-    </div>
-  `).join('');
+function renderBarras(etapas){
+  document.getElementById('barras-etapas').innerHTML=etapas.map(e=>{
+    const cor=corStatus(e.exec);
+    const lbl=e.exec===100?'Concluído':e.exec>0?e.exec+'%':'Pendente';
+    return '<div style="margin-bottom:6px;">'+
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;">'+
+      '<span style="font-size:0.76rem;color:var(--preto);max-width:75%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+e.nome+'</span>'+
+      '<span style="font-size:0.70rem;font-weight:600;color:var(--cinza-med);">'+lbl+'</span></div>'+
+      '<div style="position:relative;height:8px;background:#e0e0e0;border-radius:4px;overflow:hidden;">'+
+      '<div style="position:absolute;left:0;top:0;height:100%;width:'+e.exec+'%;background:'+cor+';border-radius:4px;transition:width 0.3s;"></div></div></div>';
+  }).join('');
 }
 
-function atualizarSliders(){
-  dados.etapas.forEach((e,i)=>{
-    const sl=document.getElementById('slider-'+i);
-    if(sl){ sl.value=e.exec; sl.nextElementSibling.textContent=e.exec+'%'; }
+function fases(){
+  return [...new Set(dados.etapas.map(e=>e.fase))];
+}
+function mediaFase(fase,etapas){
+  const fs=etapas.filter(e=>e.fase===fase);
+  return Math.round(fs.reduce((s,e)=>s+e.exec,0)/fs.length);
+}
+
+function renderRadar(etapas){
+  const fs=fases();
+  const vals=fs.map(f=>mediaFase(f,etapas));
+  if(chartRadar) chartRadar.destroy();
+  chartRadar=new Chart(document.getElementById('grafico-radar'),{
+    type:'radar',
+    data:{labels:fs,datasets:[
+      {label:'Previsto',data:fs.map(()=>100),borderColor:'rgba(41,128,185,0.4)',backgroundColor:'rgba(41,128,185,0.06)',borderWidth:1.5,borderDash:[4,3],pointRadius:0},
+      {label:'Executado',data:vals,borderColor:COR_CONCLUIDO,backgroundColor:'rgba(99,153,34,0.15)',borderWidth:2,pointBackgroundColor:COR_CONCLUIDO,pointRadius:4}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'bottom',labels:{font:{size:10},padding:10,boxWidth:10}}},
+      scales:{r:{min:0,max:100,ticks:{callback:v=>v+'%',font:{size:9},stepSize:25},pointLabels:{font:{size:10}}}}
+    }
   });
+}
+
+function renderDonut(etapas,avanco){
+  document.getElementById('donut-pct').textContent=Math.round(avanco)+'%';
+  if(chartDonut) chartDonut.destroy();
+  chartDonut=new Chart(document.getElementById('grafico-donut'),{
+    type:'doughnut',
+    data:{datasets:[{data:[avanco,100-avanco],backgroundColor:[COR_CONCLUIDO,'#e8e8e8'],borderWidth:0,hoverOffset:0}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'72%',plugins:{legend:{display:false},tooltip:{enabled:false}}}
+  });
+  const fs=fases();
+  document.getElementById('cards-fase').innerHTML=fs.map(f=>{
+    const p=mediaFase(f,etapas);
+    const cor=CORES_FASE[f]||'#888';
+    return '<div class="card-fase" style="border-left:3px solid '+cor+'">'+
+      '<div class="card-fase-nome">'+f+'</div>'+
+      '<div class="card-fase-pct" style="color:'+cor+'">'+p+'%</div>'+
+      '<div class="card-fase-bar"><div class="card-fase-fill" style="width:'+p+'%;background:'+cor+'"></div></div></div>';
+  }).join('');
 }
 
 function renderGantt(etapas){
@@ -405,40 +418,44 @@ function renderGantt(etapas){
   document.getElementById('gantt-container').innerHTML=html+'</tbody></table>';
 }
 
-function renderGraficosCronograma(etapas){
-  if(chartFisico) chartFisico.destroy();
-  chartFisico=new Chart(document.getElementById('grafico-fisico'),{
-    type:'bar',
-    data:{labels:etapas.map(e=>e.nome),datasets:[
-      {label:'Previsto',data:etapas.map(()=>100),backgroundColor:'rgba(41,128,185,0.18)',borderColor:'rgba(41,128,185,0.55)',borderWidth:1,borderRadius:3,barPercentage:0.7},
-      {label:'Executado',data:etapas.map(e=>e.exec),backgroundColor:'rgba(39,174,96,0.72)',borderRadius:3,barPercentage:0.7}
-    ]},
-    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{position:'bottom',labels:{font:{size:10},padding:10}},tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.parsed.x+'%'}}},
-      scales:{x:{min:0,max:100,ticks:{callback:v=>v+'%'},grid:{color:'#f0f0f0'}},y:{ticks:{font:{size:9},color:'#333'}}}}
-  });
+function renderTabelaEtapas(etapas,avanco){
+  const ini=new Date(2026,5,16);
+  document.getElementById('tabela-etapas').innerHTML=etapas.map(e=>{
+    const di=new Date(ini); di.setDate(di.getDate()+e.inicio*7);
+    const df=new Date(di);  df.setDate(df.getDate()+e.dur*7);
+    const fmt=d=>d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'2-digit'});
+    const badge=e.exec===100?'pago':e.exec>0?'andamento':'pendente';
+    const label=e.exec===100?'Concluído':e.exec>0?e.exec+'%':'Pendente';
+    const subs=(e.subs||[]).map(s=>'<span style="display:inline-block;font-size:0.65rem;background:#f0f0f0;border-radius:10px;padding:1px 6px;margin:1px;color:var(--cinza-med);">'+s+'</span>').join('');
+    const cor=corStatus(e.exec);
+    return '<tr><td>'+e.nome+'</td><td style="max-width:220px;">'+subs+'</td><td>'+fmt(di)+'</td><td>'+fmt(df)+'</td><td>'+e.dur+' sem.</td>'+
+      '<td><span class="badge '+badge+'">'+label+'</span></td>'+
+      '<td><div class="prog-bar-wrap"><div class="prog-bar" style="width:'+e.exec+'%;background:'+cor+'"></div></div></td></tr>';
+  }).join('');
+  document.getElementById('tf-exec').textContent=pct(avanco);
+}
 
-  const curvaPrev=SEMANAS.map((_,s)=>{
-    let a=0; dados.etapas.forEach(e=>{if(s>=e.inicio) a+=(Math.min(s-e.inicio+1,e.dur)/e.dur)*(100/dados.etapas.length);});
-    return parseFloat(Math.min(100,a).toFixed(2));
-  });
-  const semAtual=Math.max(0,Math.min(33,Math.floor((new Date()-new Date(2026,5,16))/(7*24*3600*1000))));
-  const curvaExec=SEMANAS.map((_,s)=>{
-    if(s>semAtual) return null;
-    let a=0; dados.etapas.forEach(e=>{if(s>=e.inicio) a+=(Math.min(s-e.inicio+1,e.dur)/e.dur)*(e.exec/100)*(100/dados.etapas.length);});
-    return parseFloat(Math.min(100,a).toFixed(2));
-  });
+function construirSliders(){
+  document.getElementById('etapas-sliders').innerHTML=dados.etapas.map((e,i)=>{
+    const subs=(e.subs||[]).map(s=>'<span class="sub-tag">'+s+'</span>').join('');
+    return '<div class="etapa-item">'+
+      '<div class="etapa-info">'+
+        '<div class="etapa-nome">'+e.nome+'</div>'+
+        '<div class="etapa-subs">'+subs+'</div>'+
+      '</div>'+
+      '<input type="range" class="etapa-slider" min="0" max="100" step="5" value="'+e.exec+'" id="sl-'+i+'"'+
+        ' oninput="dados.etapas['+i+'].exec=parseInt(this.value);document.getElementById('pct-'+i+'').textContent=this.value+'%';renderCronograma(dados.etapas);">'+
+      '<div class="etapa-pct" id="pct-'+i+'">'+e.exec+'%</div>'+
+    '</div>';
+  }).join('');
+}
 
-  if(chartCurvas) chartCurvas.destroy();
-  chartCurvas=new Chart(document.getElementById('grafico-curvas'),{
-    type:'line',
-    data:{labels:SEMANAS,datasets:[
-      {label:'Previsto',data:curvaPrev,borderColor:'#2980b9',backgroundColor:'rgba(41,128,185,0.07)',borderWidth:2,pointRadius:0,fill:true,tension:0.4},
-      {label:'Executado',data:curvaExec,borderColor:'#27ae60',backgroundColor:'rgba(39,174,96,0.07)',borderWidth:2,pointRadius:2,pointBackgroundColor:'#27ae60',fill:true,tension:0.3,spanGaps:false}
-    ]},
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{position:'bottom',labels:{font:{size:10},padding:10}},tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.parsed.y.toFixed(1)+'%'}}},
-      scales:{y:{min:0,max:100,ticks:{callback:v=>v+'%'},grid:{color:'#f0f0f0'}},x:{ticks:{maxTicksLimit:9,font:{size:9}},grid:{display:false}}}}
+function atualizarSliders(){
+  dados.etapas.forEach((e,i)=>{
+    const sl=document.getElementById('sl-'+i);
+    const pcel=document.getElementById('pct-'+i);
+    if(sl){sl.value=e.exec;}
+    if(pcel){pcel.textContent=e.exec+'%';}
   });
 }
 
@@ -457,18 +474,17 @@ function renderGraficosPgto(engPago,moPago,moFalta){
 
 function proximoMes(mesRef){
   const ms=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
-  const[nome,ano]=mesRef.split('/'); const idx=ms.indexOf(nome); if(idx===-1) return 'Próximo';
-  const ni=(idx+1)%12; return ms[ni]+'/'+(ni===0?parseInt(ano)+1:parseInt(ano));
+  const[nome,ano]=mesRef.split('/');const idx=ms.indexOf(nome);if(idx===-1)return 'Próximo';
+  const ni=(idx+1)%12;return ms[ni]+'/'+(ni===0?parseInt(ano)+1:parseInt(ano));
 }
 
-// ── AÇÕES ─────────────────────────────────────────────────────────────────────
 document.getElementById('btn-add-eng').addEventListener('click',async()=>{
   const mes=document.getElementById('inp-eng-mes').value.trim();
   const data=document.getElementById('inp-eng-data').value;
   if(!mes){alert('Informe o mês.');return;}
-  let df=''; if(data){const[y,m,d]=data.split('-');df=d+'/'+m+'/'+y;}
+  let df='';if(data){const[y,m,d]=data.split('-');df=d+'/'+m+'/'+y;}
   dados.eng.push({mes,data:df});
-  await salvar(); renderizar();
+  await salvar();renderizar();
   document.getElementById('inp-eng-mes').value='';
   document.getElementById('inp-eng-data').value='';
 });
@@ -479,7 +495,7 @@ document.getElementById('btn-add-mo').addEventListener('click',async()=>{
   if(!data||isNaN(valor)){alert('Preencha data e valor.');return;}
   const[y,m,d]=data.split('-');
   dados.mo.push({data:d+'/'+m+'/'+y,valor});
-  await salvar(); renderizar();
+  await salvar();renderizar();
   document.getElementById('inp-mo-valor').value='';
   document.getElementById('inp-mo-data').value='';
 });
@@ -488,16 +504,9 @@ document.getElementById('btn-salvar-crono').addEventListener('click',async()=>{
   await salvar();
 });
 
-window.delEng = async(i)=>{
-  if(!confirm('Remover esta parcela?')) return;
-  dados.eng.splice(i,1); await salvar(); renderizar();
-};
-window.delMo = async(i)=>{
-  if(!confirm('Remover este pagamento?')) return;
-  dados.mo.splice(i,1); await salvar(); renderizar();
-};
+window.delEng=async(i)=>{if(!confirm('Remover esta parcela?'))return;dados.eng.splice(i,1);await salvar();renderizar();};
+window.delMo=async(i)=>{if(!confirm('Remover este pagamento?'))return;dados.mo.splice(i,1);await salvar();renderizar();};
 
-// NAV
 document.querySelectorAll('.nav-tab').forEach(t=>{
   t.addEventListener('click',()=>{
     document.querySelectorAll('.nav-tab').forEach(x=>x.classList.remove('ativo'));
